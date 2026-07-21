@@ -1,0 +1,30 @@
+name: Test formulae
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Tap repository
+        run: brew tap egigoka/tap
+
+      - name: Validate formulae
+        if: ${{ hashFiles('Formula/*.rb') != '' }}
+        run: |
+          brew style egigoka/tap
+          brew audit --strict egigoka/tap/pomodorough
+
+      - name: Install and test Pomodorough
+        if: ${{ hashFiles('Formula/pomodorough.rb') != '' }}
+        run: |
+          brew install egigoka/tap/pomodorough
+          brew test egigoka/tap/pomodorough
