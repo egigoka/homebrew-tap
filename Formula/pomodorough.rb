@@ -4,7 +4,6 @@ class Pomodorough < Formula
   desc "Local-first Pomodoro timer with desktop, CLI, and TUI clients"
   homepage "https://github.com/egigoka/pomodorough-linux"
   url "https://github.com/egigoka/pomodorough-linux/releases/download/v0.1.0/pomodorough_linux-0.1.0.tar.gz"
-  version "0.1.0"
   sha256 "d2e954a4fab10365113bb913cec82c849d41f2ccf4eeca30c830f9d03993ae14"
   license "GPL-3.0-or-later"
 
