@@ -2,9 +2,9 @@ class Pomodorough < Formula
   include Language::Python::Virtualenv
 
   desc "Local-first Pomodoro timer with desktop, CLI, and TUI clients"
-  homepage "https://github.com/egigoka/pomodorough-linux"
-  url "https://github.com/Pomodoro-Everywhere/pomodorough-linux/releases/download/v0.1.3/pomodorough_linux-0.1.3.tar.gz"
-  sha256 "c2f0502eebb95bf85f9c68718fe133e149767e77bcd94b414a1ccde5573e6bc0"
+  homepage "https://github.com/Pomodoro-Everywhere/pomodorough-desktop"
+  url "https://github.com/Pomodoro-Everywhere/pomodorough-desktop/releases/download/v0.1.4/pomodorough_linux-0.1.4.tar.gz"
+  sha256 "095396d3634cd2fb7511452df0189f92a7be8e321f9b8f10cb7fc1930d9f009a"
   license "GPL-3.0-or-later"
 
   depends_on "pyside"
