@@ -3,8 +3,8 @@ class Pomodorough < Formula
 
   desc "Local-first Pomodoro timer with desktop, CLI, and TUI clients"
   homepage "https://github.com/Pomodoro-Everywhere/pomodorough-desktop"
-  url "https://github.com/Pomodoro-Everywhere/pomodorough-desktop/releases/download/v0.2.3/pomodorough_linux-0.2.3.tar.gz"
-  sha256 "7347b9120ba567b309437da272282b61f8e64dee01e6f8c06ddecc3c959ea848"
+  url "https://github.com/Pomodoro-Everywhere/pomodorough-desktop/releases/download/v0.2.4/pomodorough_linux-0.2.4.tar.gz"
+  sha256 "0eeb498dae9d2f89ff1b8faa44f4a36277c62b62e1617969f5258a23e331f3d3"
   license "GPL-3.0-or-later"
 
   depends_on "pyside"
