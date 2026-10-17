@@ -3,8 +3,8 @@ class Pomodorough < Formula
 
   desc "Local-first Pomodoro timer with desktop, CLI, and TUI clients"
   homepage "https://github.com/Pomodoro-Everywhere/pomodorough-desktop"
-  url "https://github.com/Pomodoro-Everywhere/pomodorough-desktop/releases/download/v0.48.0/pomodorough_linux-0.48.0.tar.gz"
-  sha256 "b1688ad92309b56c036cbfb068860fbc0a7f489c23af3a6e57861816ad4bb8d4"
+  url "https://github.com/Pomodoro-Everywhere/pomodorough-desktop/releases/download/v0.49.0/pomodorough_linux-0.49.0.tar.gz"
+  sha256 "327ae8537eb740b9e5c849ea891408b1a0b0fab9c5dc814a3eb5385bf47c1482"
   license "GPL-3.0-or-later"
 
   depends_on "pyside"
@@ -27,6 +27,11 @@ class Pomodorough < Formula
     sha256 "360ccded2b7fce0af0ff80cc8f5942a1c5d99b0e856033acb030bfc634709e74"
   end
 
+  resource "wcwidth" do
+    url "https://files.pythonhosted.org/packages/9c/b4/0bfa065af506540d9d558e3e5548cff00bc1f9b24e6e2a8512498e8628de/wcwidth-0.9.2-py3-none-any.whl"
+    sha256 "89ca642c5bf0101157a09366be69fad0379db1f700ae39a920e103234573670e"
+  end
+
   resource "wasmtime" do
     on_arm do
       url "https://files.pythonhosted.org/packages/dc/a6/91c9c19ed7f8e164f4db6405d872c9397be9f53e4f325d0adcd5e67598f4/wasmtime-48.0.0-py3-none-macosx_11_0_arm64.whl"
@@ -42,6 +47,7 @@ class Pomodorough < Formula
     venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resource("setuptools"), build_isolation: false
     venv.pip_install resource("platformdirs"), build_isolation: false
+    venv.pip_install resource("wcwidth"), build_isolation: false
     wasmtime = resource("wasmtime")
     wasmtime.stage { venv.pip_install Pathname.pwd/wasmtime.downloader.basename, build_isolation: false }
     if Hardware::CPU.arm?
@@ -58,6 +64,7 @@ class Pomodorough < Formula
     assert_match "Run Pomodorough", shell_output("#{bin}/pomodorough-tui --help")
     system libexec/"bin/python", "-c", "import PySide6"
     system libexec/"bin/python", "-c", "from pomodorough.shared_core import SharedCore; SharedCore()"
+    system libexec/"bin/python", "-c", "from pomodorough import tui"
     system libexec/"bin/python", "-c", "import iroh" if Hardware::CPU.arm?
   end
 end
