@@ -3,8 +3,8 @@ class Pomodorough < Formula
 
   desc "Local-first Pomodoro timer with desktop, CLI, and TUI clients"
   homepage "https://github.com/Pomodoro-Everywhere/pomodorough-desktop"
-  url "https://github.com/Pomodoro-Everywhere/pomodorough-desktop/releases/download/v0.53.3/pomodorough_linux-0.53.3.tar.gz"
-  sha256 "32bc9fa544f797df6262e9cc50f5330410b6bdf0075d5234e37c69cbf747085c"
+  url "https://github.com/Pomodoro-Everywhere/pomodorough-desktop/releases/download/v0.56.0/pomodorough_linux-0.56.0.tar.gz"
+  sha256 "41f360adba0d3961ac5f8b5ee4d9cad43cbeac02787b9930e1a301cb52a4be20"
   license "GPL-3.0-or-later"
 
   depends_on "pyside"
@@ -34,12 +34,12 @@ class Pomodorough < Formula
 
   resource "wasmtime" do
     on_arm do
-      url "https://files.pythonhosted.org/packages/dc/a6/91c9c19ed7f8e164f4db6405d872c9397be9f53e4f325d0adcd5e67598f4/wasmtime-48.0.0-py3-none-macosx_11_0_arm64.whl"
-      sha256 "ea69889a3c51702e9da5f5f441027ca934f7758f8926a4ed167b0d6877f092e8"
+      url "https://files.pythonhosted.org/packages/5d/c1/e8782c8c8756235bea9dcc7cef2a35d3691c0f573eed415ccbf871cd6b3e/wasmtime-50.0.1-py3-none-macosx_11_0_arm64.whl"
+      sha256 "ff4fc58ed3cbdb919d056accd4d280be13962a542754aaefd8a9b4654efa9bd9"
     end
     on_intel do
-      url "https://files.pythonhosted.org/packages/89/93/911434c6c4406e6979b6cb67ba889c85633ff8d92eb0cb569fec6e2a43f7/wasmtime-48.0.0-py3-none-macosx_10_13_x86_64.whl"
-      sha256 "50e1ea81a3bec537d00e076722dfdc48978a56ea24619d8153aa1f75b11796b9"
+      url "https://files.pythonhosted.org/packages/89/1c/91bbf9d9a3846a174cdf6597b02d27d9f335c15a2d34d16fb8f46c81cb01/wasmtime-50.0.1-py3-none-macosx_10_13_x86_64.whl"
+      sha256 "13fe813b922712a9e10fe0f48b2c56da06432eea4b24269bb7cd3a6b2720560b"
     end
   end
 
